@@ -7,6 +7,18 @@
 
 **Habilidades demostradas:** Gestion de Firewalls, Administracion de Linux, Conceptos de Redes (Puertos/Protocolos), Pruebas de conectividad.
 
+**Cheat Sheet:**
+
+`sudo ufw status verbose` -> Current status.
+
+`sudo ufw status numbered` -> List rules.
+
+`sudo ufw default deny incoming` -> Close door, nothing coming.
+
+`sudo ufw allow [port]` -> Open specific port.
+
+`sudo ufw delete [number]` -> Delete rule.
+
 **Procedimiento:**
 
 1. **Analisis inicial:** Verificacion del estado del firewall y deteccion de vulnerabilidades (puertos abiertos por defecto).
