@@ -15,16 +15,19 @@
 
 2. **Estableciendo politicas bases:** Aplicacion del principio de "Minimo privilegio".
 
-* **Bloquear todo lo que entra:** ```bash 
-                                     sudo uwf default deny incomig
+* **Bloquear todo lo que entra:** 
+```bash 
+   sudo uwf default deny incomig
 
-* **Permitir salida:** ```bash 
-                          sudo default allow outcoming
+* **Permitir salida:** 
+```bash 
+   sudo default allow outcoming
 
 3. **Simulacion de Servicio:** Despliegue de un servidor web temporal para pruebas.
 
-* **Despliegue del servidor python:** ```bash 
-                                         python3 -m http.server 8080
+* **Despliegue del servidor python:** 
+```bash 
+   python3 -m http.server 8080
 
 * **Prueba:** Conexion fallida desde dispositivo externo (confirmando funcionalidad del bloqueo).
 
