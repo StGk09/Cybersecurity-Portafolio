@@ -15,5 +15,30 @@
 
 2. **Estableciendo politicas bases:** Aplicacion del principio de "Minimo privilegio".
 
-* **Bloquear todo lo que entra:** `bash sudo uwf default deny incomig
-* **Permitir salida:** ` sudo default allow outcoming
+* **Bloquear todo lo que entra:** ```bash 
+                                     sudo uwf default deny incomig
+
+* **Permitir salida:** ```bash 
+                          sudo default allow outcoming
+
+3. **Simulacion de Servicio:** Despliegue de un servidor web temporal para pruebas.
+
+* **Despliegue del servidor python:** ```bash 
+                                         python3 -m http.server 8080
+
+* **Prueba:** Conexion fallida desde dispositivo externo (confirmando funcionalidad del bloqueo).
+
+4. **Apertura controlada (Whitelisting):** Creacion de reglas especificas para el servicio.
+```bash
+   sudo ufw allow 8080/tcp
+   
+5. **Validacion final:** El servicio es accesible, pero el resto del sistema permanece protegido.
+
+
+**Conclusion:**
+Se implemento exitosamente un firewall de host, reduciendo la superficie de ataque del sistema sin interrumpir los servicios legitimos.
+
+  
+
+
+
