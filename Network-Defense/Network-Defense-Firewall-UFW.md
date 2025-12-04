@@ -19,7 +19,9 @@
    ```bash 
    sudo uwf default deny incomig
 
-     **Permitir salida:**
+
+
+   **Permitir salida:**
      ```bash 
      sudo default allow outcoming
 
@@ -28,6 +30,8 @@
    Despliegue del servidor python: 
    ```bash 
    python3 -m http.server 8080
+
+
 
      **Prueba:** Conexion fallida desde dispositivo externo (confirmando funcionalidad del bloqueo).
 
