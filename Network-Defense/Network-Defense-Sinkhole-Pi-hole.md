@@ -24,3 +24,20 @@
 * Proteccion proactiva contra sitios de prishing conocidos.
 
 
+**Desafío Técnico Encontrado:** 
+
+Tras la activación del servidor DNS (Pi-hole), se detectó una pérdida total de resolución de nombres en los clientes.
+
+**Diagnóstico:** 
+El sistema operativo anfitrión (Parrot OS) tenía una política de firewall estricta (ufw default deny incoming) previamente configurada para Hardening. Esto bloqueaba las peticiones UDP/TCP entrantes al servicio DNS.
+
+**Solución Implementada:** 
+Se configuró una regla de excepción específica en el firewall para permitir tráfico DNS, manteniendo el resto de puertos cerrados.
+
+**Comando:** `sudo ufw allow 53` (Habilita tráfico UDP y TCP para DNS).
+
+**Resultado:** Restauración inmediata del servicio manteniendo la postura de seguridad del Host.
+
+
+
+
