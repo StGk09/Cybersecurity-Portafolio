@@ -17,13 +17,13 @@
 
    **Bloquear todo lo que entra:** 
    ```bash 
-   sudo uwf default deny incomig
+   sudo uwf default deny incomig;
 
 
 
    **Permitir salida:**
      ```bash 
-     sudo default allow outcoming
+     sudo default allow outcoming;
 
 3. **Simulacion de Servicio:** Despliegue de un servidor web temporal para pruebas.
 
