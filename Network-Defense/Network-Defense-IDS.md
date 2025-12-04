@@ -1,4 +1,4 @@
-# Implementacion de IDS(Suricata) y analisis de Trafico.
+# Implementacion de IDS (Suricata) y analisis de Trafico.
 
 ## Escenario
 El objetivo fue endurecer la seguridad del laboratorio implementando un **sistema de deteccion de intrusos (IDS)** basado en host. EL sistema debe ser capaz de detectar escaneos de red y trafico IMCP (Ping) malicioso en tiempo real.
@@ -9,10 +9,21 @@ Inicialmente se planteo el uso de **Snort** como IDS. Sin embargo, durante el de
 
 ## Configuracion e Implementacion
 1. **Despliegue:** Instalacion de Suricata en el nodo Acer (Parrot OS).
+
 2. **Creacion de Reglas (Signatures):**
    Se diseno una regla personalizada para detectar reconocimiento basico (Ping Sweeps).
    ```bash
    alert icmp any any -> any any (msg:ALERTA: PING DETECTADO POR SURICATA"; sid: 100001; rev:1;)
+
+3. **Arranque del IDS:**
+   ```bash
+   sudo suricata -S mis_reglas.rules -i wlp2s0
+
+4. **Visualizacion de alertas con tail -f:**
+   ```bash
+   sudo tail -f /var/log/suricata/fast.log
+
+
 --------------------------------------------------------------------------------------------------------------
 
 ## Evasion de IDS (Red Team Exercise)
