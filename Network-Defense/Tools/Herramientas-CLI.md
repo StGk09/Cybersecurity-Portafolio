@@ -1,15 +1,7 @@
 
 ## Herramientas CLI
 
-**git**
-
-**grep**
-
-**ssh**
-
-**vim**
-
-**tmux** (Gestion de sesiones y terminales)
+- **tmux** (Gestion de sesiones y terminales)
 
 iniciar una nueva sesion -> `tmux`
 
@@ -17,7 +9,7 @@ iniciar nueva sesion con nombre -> `tmux new -s nueva_sesion`
 
 Prefijo por defecto -> `control + b`
 
-**Dividir verticalmente:** `Ctrl + b` y luego %.
+* **Dividir verticalmente:** `Ctrl + b` y luego %.
 
 * **Dividir horizontalmente:** `Ctrl + b` y luego ".
 
@@ -27,11 +19,18 @@ Prefijo por defecto -> `control + b`
 * **Reaparecer centro de comando anterior:** `tmux a`.
 
 
+- **git**
 
-* **monitoreo de CPU:** `htop`
+- **grep**
 
-**Logs en tiempo real:** tail -f /va
+- **ssh**
 
-**Logs Pi-hole en tiempo real:** `sudo pihole -t`
+- **vim**
+
+- **monitoreo de CPU:** `htop`
+
+- **Logs en tiempo real:** tail -f /va
+
+- **Logs Pi-hole en tiempo real:** `sudo pihole -t`
 
 
