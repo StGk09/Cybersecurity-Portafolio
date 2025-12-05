@@ -9,14 +9,15 @@ iniciar nueva sesion con nombre -> `tmux new -s nueva_sesion`
 
 Prefijo por defecto -> `control + b`
 
-* **Dividir verticalmente:** `Ctrl + b` y luego %.
+*Dividir verticalmente:* `Ctrl + b` y luego %.
 
-* **Dividir horizontalmente:** `Ctrl + b` y luego ".
+*Dividir horizontalmente:* `Ctrl + b` y luego ".
 
-* **Moverse entre paneles:** `Ctrl + b` y luego flechas de direccion.
+*Moverse entre paneles:* `Ctrl + b` y luego flechas de direccion.
 
-* **Cerrar un panel:** `exit` o `Ctrl + d`. 
-* **Reaparecer centro de comando anterior:** `tmux a`.
+*Cerrar un panel:* `exit` o `Ctrl + d`. 
+
+*Reaparecer centro de comando anterior:* `tmux a`.
 
 
 - **git**
